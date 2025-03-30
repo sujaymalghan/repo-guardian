@@ -77,7 +77,7 @@ Create a `.env` file in the root directory with the following content:
 
 ```env
 GITHUB_TOKEN=your_github_token
-GITHUB_OWNER=your_github_username_or_org
+GITHUB_OWNER=your_github_username
 PULUMI_ACCESS_TOKEN=your_pulumi_token
 PULUMI_CONFIG_PASSPHRASE=
 ```
