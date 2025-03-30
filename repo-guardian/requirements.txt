@@ -1,0 +1,5 @@
+pulumi
+pulumi_github
+pulumi_automation
+pygithub
+python-dotenv
