@@ -37,21 +37,67 @@ It uses Pulumi's infrastructure-as-code approach not for cloud resources, but to
 
 ---
 
-## Installation Instructions
+## Installation & Usage
 
-1. **Clone the repository**
+Follow these steps to install and run **RepoGuardian**:
+
+---
+
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/sujaymalghan/repo-guardian.git
 cd repo-guardian
+```
 
-2. python -m venv venv
-source venv/bin/activate  
-# or venv\Scripts\activate on Windows
+---
 
-3.pip install -r requirements.txt
+### 2. Set Up a Virtual Environment
 
-4. Add tokens to .env files give access to github account
+```bash
+python -m venv venv
+source venv/bin/activate           # macOS/Linux
+# OR
+venv\Scripts\activate              # Windows
+```
 
-5. python main.py
+---
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### 4. Configure Environment Variables
+
+Create a `.env` file in the root directory with the following content:
+
+```env
+GITHUB_TOKEN=your_github_token
+GITHUB_OWNER=your_github_username_or_org
+PULUMI_ACCESS_TOKEN=your_pulumi_token
+PULUMI_CONFIG_PASSPHRASE=
+```
+
+> Note: Make sure the GitHub token has access to your repos, and the Pulumi token is valid.
+
+---
+
+### 5. Run the Tool
+
+```bash
+python main.py
+```
+
+This will:
+
+- Scan all repositories under your GitHub account or organization
+- Detect missing `README.md` or `LICENSE` files
+- Automatically commit those files using Pulumi
+
+---
+
 
